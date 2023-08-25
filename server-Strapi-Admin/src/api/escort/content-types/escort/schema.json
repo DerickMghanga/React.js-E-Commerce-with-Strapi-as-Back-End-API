@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "escorts",
+  "info": {
+    "singularName": "escort",
+    "pluralName": "escorts",
+    "displayName": "escort",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string",
+      "required": true
+    },
+    "servicesOffered": {
+      "type": "richtext",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "area": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::area.area",
+      "inversedBy": "escorts"
+    },
+    "age": {
+      "type": "integer",
+      "required": true
+    },
+    "town": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::town.town",
+      "inversedBy": "escorts"
+    }
+  }
+}

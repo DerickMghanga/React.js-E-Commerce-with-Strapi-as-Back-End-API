@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "areas",
+  "info": {
+    "singularName": "area",
+    "pluralName": "areas",
+    "displayName": "Area",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "escorts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::escort.escort",
+      "mappedBy": "area"
+    },
+    "town": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::town.town",
+      "inversedBy": "areas"
+    }
+  }
+}
